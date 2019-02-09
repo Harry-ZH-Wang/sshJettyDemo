@@ -1,0 +1,32 @@
+<ehcache>
+    <diskStore path="java.io.tmpdir"/><!-- D:/cache -->
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        overflowToDisk="true"
+        memoryStoreEvictionPolicy="LFU"
+        />
+        
+        <cache
+        name="users"
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="10"
+        timeToLiveSeconds="20"
+        overflowToDisk="true"
+        memoryStoreEvictionPolicy="LFU"
+        />
+</ehcache>
+<!-- maxElementsInMemory 咱们内存中,可以缓存中允许最大的对象数量 -->
+<!-- eternal 缓存是否永久有效,false -->
+<!-- timeToIdleSeconds 定义的缓存中,从来没有被调用的数据,它的生命周期,单位是秒 -->
+<!-- timeToLiveSeconds 调用的数据,在缓存中,可以存活的时间,相当于:满血复活 -->
+<!-- overflowToDisk 当内存不足的时候,是否转存到磁盘中去 -->
+<!-- memoryStoreEvictionPolicy 缓存的出站策略, 当maxElementsInMemory达到这个峰值的时候,
+,Ehcache将如何清理之前的一些不必要的数据,
+LFU(最少访问次数来清理) FIFO(先进先出) LRU(最少使用,默认缓存策略)
+
+
+-->
